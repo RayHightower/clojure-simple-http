@@ -1,5 +1,5 @@
 (ns clojure-simple-http.core
-  (:require [org.httpkit.server :refer [run-server]]
+  (:require [org.http-kit.server :refer [run-server]]
             [clj-time.core :as t]))
 
 (defn app [req]
