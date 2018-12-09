@@ -18,5 +18,7 @@
 
 
 (defn -main [& args]
-  (run-server app {:port 8080})
-  (println "Server started on port 8080"))
+  (def port 8080)
+  (def items ["Server started on port" port])
+  (run-server app {:port port})
+  (println items))
