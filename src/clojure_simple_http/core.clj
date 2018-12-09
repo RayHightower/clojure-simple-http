@@ -1,5 +1,6 @@
 (ns clojure-simple-http.core
-  (:require [org.httpkit.server :refer [run-server]]
+  (:require [clojure-test :refer [is testing with-test deftest run-tests]]
+            [org.httpkit.server :refer [run-server]]
             [clj-time.core :as t]
             [compojure.core :refer :all]
             [compojure.route :as route]))
@@ -22,3 +23,5 @@
   (def items (str "Server started on port " port))
   (run-server app {:port port})
   (println items))
+
+(run-tests)
