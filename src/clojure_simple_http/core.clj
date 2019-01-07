@@ -9,13 +9,12 @@
   []
   (let [response {:status  200
                   :headers {"Content-Type" "text/html"}
-                  :body    (str (t/time-now))}]
+                  :body    (str (t/time-now) "<br/><a href=\"/\">Back home.</a>")}]
     response))
 
 (defroutes app
            (GET "/" [] "<h1>This is only a test.</h1><br/><h3>Do not be alarmed!<br/>Now we know that the Clojure server works, even though it depends on a library called http-kit :-)<br/><a href=\"/get-time\">What time is it?</a><br/><a href=\"/not-found\">What does the 404 page look like?</a></h3>")
-           (GET "/get-time" [] (str (t/time-now) "<br/><a href=\"/\">Back home.</a>"))
-           ;(GET "/get-time" [] (get-time))
+           (GET "/get-time" [] (get-time))
            (route/not-found "<h1>RTH's Magic 404 Page<br/>Page not found</h1><br/><br/><a href=\"/\">Back home.</a>"))
 
 
